@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.img_right_float {
+	float: right;
+	margin-left: 10px;
+	border: thin solid #FFFFFF;
+}
+.img_left_float {
+	float: left;
+	margin-right: 10px;
+	border: thin solid #FFFFFF;
+}
+
+table {
+	border-style:solid;
+	border-width:3px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+}
+div {
+	border-style:dashed;
+	border-width:1px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+	text-align:center;
+}
