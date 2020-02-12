@@ -4,13 +4,10 @@
     function iAmError($n) {
         return "<center><h3>An Error Occured: $n</h3><video width='500' autoplay loop><source src='assets/jazz.webm' type='video/webm' autoplay='true'>Your shitty browser does not support Webms. Get a real browser you fucking nerd.</video></center>";
     }
-/* GET */
-$id = isset($_GET['id']) ? $_GET['id'] : '';
-
-/* POST */
-if (isset($_POST['searchBtn'])){
-    $search = isset($_POST['search']) ? $_POST['search'] : '';
-}
+        
+    /* GET */
+    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $search = isset($_GET['search']) ? $_GET['search'] : '';
 
 ?>
 <head>
@@ -117,12 +114,12 @@ if (isset($_POST['searchBtn'])){
         <div class="row bg-light-seethru">
             <div class="col-sm-12">
             <br />
-            <form action='' method='post' name='searchform'>
+            <form action='./videos.php' method='get' name='searchform'>
                 <?php 
                 # This is here so we can see the search term used still
-                echo "<input type='text' name='search' value='$search' placeholder='Search' required='yes'>"; 
+                echo "<input type='text' name='search' value='$search' placeholder='Search'>"; 
                 ?>
-                <input class='text' type='submit' name='searchBtn' value='Search'>
+                <input class='text' type='submit' value='Search'>
             </form>
             <br />
             <?php
