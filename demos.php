@@ -10,6 +10,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 5px;
+            background-color: #343a40;
+            text-align:center;
+        }
+
+        td:hover {
+            background-color: #f5f5f5;
+        }
+
         body {
             background-image: url("assets/engineer.jpg");
             background-repeat: no-repeat;
@@ -81,11 +95,30 @@
 </nav>
 <body>
     <div class="container" style="margin-top:30px; margin-bottom:30px">
+        <div class="row bg-primary text-light">
+            <div class="col text-center">
+                <br />
+                <h1>Demos</h1>
+                <br />
+            </div>
+        </div>
         <div class="row bg-light-seethru">
             <div class="col-sm-12">
-                
-                <p>Sorry, nothing.</p>
-
+            <br />
+            <?php
+                #Simple script to spit out the contents of a folder with download links
+                $dir = "demos";
+                $files = scandir($dir);
+                sort($files);
+                echo "<table>";
+                foreach($files as $file) {
+                    if(substr($file,-4) == ".dem") {
+                        echo "<tr><td><a href='$dir/$file'>$file</a></td></tr>";
+                    }
+                }
+                echo "</table>";
+            ?>
+            <br />
             </div>
         </div>
     </div>
@@ -93,7 +126,7 @@
 <footer class="footer card-footer text-center bg-dark">
     <a href="./exaflamer/"><img src="assets/exa_colorcorrected.png" style="height:60px"></a>
     <br />
-    <small class="text-muted">Last updated January 2020</small>
+    <small class="text-muted">Last updated February 2020</small>
 </footer>
 
 </html>

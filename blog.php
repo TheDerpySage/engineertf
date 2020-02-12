@@ -93,7 +93,7 @@
 <footer class="footer card-footer text-center bg-dark">
     <a href="./exaflamer/"><img src="assets/exa_colorcorrected.png" style="height:60px"></a>
     <br />
-    <small class="text-muted">Last updated January 2020</small>
+    <small class="text-muted">Last updated February 2020</small>
 </footer>
 
 </html>

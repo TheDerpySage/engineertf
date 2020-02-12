@@ -6,6 +6,12 @@
     }
 /* GET */
 $id = isset($_GET['id']) ? $_GET['id'] : '';
+
+/* POST */
+if (isset($_POST['searchBtn'])){
+    $search = isset($_POST['search']) ? $_POST['search'] : '';
+}
+
 ?>
 <head>
     <title>Engineer.tf - Videos</title>
@@ -111,6 +117,14 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
         <div class="row bg-light-seethru">
             <div class="col-sm-12">
             <br />
+            <form action='' method='post' name='searchform'>
+                <?php 
+                # This is here so we can see the search term used still
+                echo "<input type='text' name='search' value='$search' placeholder='Search' required='yes'>"; 
+                ?>
+                <input class='text' type='submit' name='searchBtn' value='Search'>
+            </form>
+            <br />
             <?php
             $FILE = './videos.txt';
             if(file_exists($FILE)){
@@ -120,15 +134,32 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
                     $i = 0;
                     echo "<table><tr>";
                     while (!feof($HANDLER)) {
-                        $LINE = explode("-", fgets($HANDLER));
+                        $LINE = explode(",", fgets($HANDLER));
                         #Watch out for newline characters
                         if(trim($LINE[0]) !== ""){
-                            echo "<td><a href='./videos.php?id=$LINE[0]'><image src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><br/>$LINE[1]</a></td>";
-                            $i++;
-                            # Items per row break
-                            if (($i % 2) == 0)
-                                echo "</tr><tr>";
+                            # If no filter has been given, process as normal
+                            if(empty($search)){
+                                echo "<td><a href='./videos.php?id=$LINE[0]'><image src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><br/>$LINE[1]</a></td>";
+                                $i++;
+                                # Items per row break
+                                if (($i % 2) == 0)
+                                    echo "</tr><tr>";
+                            # Else process, but filter based on our search term
+                            } else {
+                                # No case sensitive search
+                                if (strpos(strtolower($LINE[1]), strtolower($search)) !== false){
+                                    echo "<td><a href='./videos.php?id=$LINE[0]'><image src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><br/>$LINE[1]</a></td>";
+                                    $i++;
+                                    # Items per row break
+                                    if (($i % 2) == 0)
+                                        echo "</tr><tr>";
+                                }
+                            }
                         }
+                    }
+                    # If no results, say as much...
+                    if ($i == 0){
+                        echo "<p>No results</p>";
                     }
                     echo "</tr></table>";
                     fclose($HANDLER);
@@ -138,7 +169,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
                     $HANDLER = fopen($FILE, "r");
                     #Validate the given id against whats in our file, and get our video title if we find it. 
                     while (!feof($HANDLER)) {
-                        $LINE = explode("-", fgets($HANDLER));
+                        $LINE = explode(",", fgets($HANDLER));
                         if ($id == $LINE[0]){
                             $title = $LINE[1];
                             break;
@@ -170,7 +201,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
 <footer class="footer card-footer text-center bg-dark">
     <a href="./exaflamer/"><img src="assets/exa_colorcorrected.png" style="height:60px"></a>
     <br />
-    <small class="text-muted">Last updated January 2020</small>
+    <small class="text-muted">Last updated February 2020</small>
 </footer>
 
 </html>
