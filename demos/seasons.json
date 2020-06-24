@@ -1,32 +1,45 @@
-{
-	"seasons": [{
-			"ire": "IRENE",
-			"ff": "Fast Forward",
-			"gknd": "Galactic Kids Next Door",
-			"cp": "Chill Penguins",
-			"tf": "The Faction",
-			"apo": "Apolodosh"
-		},
-		{},
-		{},
-		{},
-		{
-			"mcm": "Man Crush Monday",
-			"imp": "Impostors",
-			"ss": "Sweatshop Sadface :(",
-			"tkc": "Team King Chungus",
-			"tba": "Turtle Beach Audio"
+{ 
+  "seasons": [
+	{
+		"apo": "Apolodosh",
+		"cp": "Chill Penguins",
+		"ff": "Fast Forward",
+		"gknd": "Galactic Kids Next Door",
+		"ire": "IRENE",
+		"tf": "The Faction"
+	},
+	{},
+	{},
+	{
+		"an": "Amicitia Nova",
+		"apo": "Apolodosh",
+		"bh": "Burgers & Homies",
+		"dm": "Dunk Masters",
+		"fv": "Fred V",
+		"ht": "Heart Throbs",
+		"imp": "Impostors",
+		"shit": "Super Handsome Inteligent Team"
+		"sw": "Second Wind",
+		"sy": ":squirtyay:"
+	},
+	{
+		"fv": "Fred VI",
+		"imp": "Impostors",
+		"mcm": "Man Crush Monday",
+		"ss": "Sweatshop Sadface :(",
+		"tkc": "Team King Chungus",
+		"tba": "Turtle Beach Audio"
 
-		},
-		{
-			"mcm": "Man Crush Monday",
-			"imp": "Impostors",
-			"ihm": "I Hate Mondays",
-			"tw": "Team Whyte",
-			"owl": "Order of the White Lotus",
-			"kks": "Krusty Krab eSports",
-			"pyp": "Pop Your Pipes!",
-			"sy": "squirtyay"
-		}
-	]
+	},
+	{
+		"ihm": "I Hate Mondays",
+		"imp": "Impostors",
+		"kks": "Krusty Krab eSports",
+		"mcm": "Man Crush Monday",
+		"owl": "Order of the White Lotus",
+		"pyp": "Pop Your Pipes!",
+		"sy": "squirtyay",
+		"tw": "Team Whyte"
+	}
+ ]
 }
