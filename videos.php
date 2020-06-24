@@ -25,12 +25,11 @@
 
         td {
             padding: 5px;
-            background-color: #343a40;
             text-align:center;
         }
 
         td:hover {
-            background-color: #f5f5f5;
+            background-color: #FFFFFF;
         }
 
         body {
@@ -136,7 +135,7 @@
                         if(trim($LINE[0]) !== ""){
                             # If no filter has been given, process as normal
                             if(empty($search)){
-                                echo "<td><a href='./videos.php?id=$LINE[0]'><image src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><br/>$LINE[1]</a></td>";
+                                echo "<td><div class='border border-dark rounded-lg bg-dark'><a href='./videos.php?id=$LINE[0]'><img style='width: 100%' src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><p>$LINE[1]</p></a></div></td>";
                                 $i++;
                                 # Items per row break
                                 if (($i % 2) == 0)
@@ -145,7 +144,7 @@
                             } else {
                                 # No case sensitive search
                                 if (strpos(strtolower($LINE[1]), strtolower($search)) !== false){
-                                    echo "<td><a href='./videos.php?id=$LINE[0]'><image src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><br/>$LINE[1]</a></td>";
+                                    echo "<td><div class='border border-dark rounded-lg bg-dark'><a href='./videos.php?id=$LINE[0]'><img style='width: 100%' src='https://img.youtube.com/vi/$LINE[0]/hqdefault.jpg'><p>$LINE[1]</p></a></div></td>";
                                     $i++;
                                     # Items per row break
                                     if (($i % 2) == 0)
