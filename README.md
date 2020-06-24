@@ -19,12 +19,16 @@ demos.php
 ----------------------
 Demo files placed in the demos directory will be listed on this page.
 
-It simply parses the directory and filters output based on file names ending with '.dem'.
+They follow a strict naming scheme to be properly parsed.
+`LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF.dem`
+
+The included examples should give a better idea of what they should look like.
+
+It also includes a JSON file `seasons.json` of Teams names and their Shorthand by season so that the `MATCH_UP` part can be shorthanded in the file name.
 
 Easy enough.
 
 TO-DO
 ======================
-Improve formatting on demos.php
 
 Create the blog.php system

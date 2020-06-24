@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Engineer.tf - Temp</title>
+    <title>Engineer.tf - Demos</title>
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,14 +14,8 @@
             width: 100%;
         }
 
-        td {
-            padding: 5px;
-            background-color: #343a40;
+        td, th {
             text-align:center;
-        }
-
-        td:hover {
-            background-color: #f5f5f5;
         }
 
         body {
@@ -35,12 +29,12 @@
         }
 
         a {
-            color: #FFFFFF;
+            color: #999999;
             text-align: center;
         }
 
         a:hover {
-            color: #999999;
+            color: #FFFFFF;
         }
 
         img {
@@ -110,13 +104,54 @@
                 $dir = "demos";
                 $files = scandir($dir);
                 sort($files);
-                echo "<table>";
-                foreach($files as $file) {
+                $json = json_decode(file_get_contents("$dir/seasons.json"), true);
+                echo "<table class='table table-striped table-dark'>
+                <tr>
+                <th scope='col'>League</th>
+                <th scope='col'>Division</th>
+                <th scope='col'>Matchup</th>
+                <th scope='col'>Map</th>
+                <th scope='col'>Season/Event</th>
+                <th scope='col'>Date</th>
+                <th scope='col'>Downloads</th>
+                </tr>
+                </thead>
+                <tbody>";
+                for ($x = 0; $x < count($files); $x++) {
+                    $file = $files[$x];
                     if(substr($file,-4) == ".dem") {
-                        echo "<tr><td><a href='$dir/$file'>$file</a></td></tr>";
+                        $data = explode('-', substr(strtoupper($file),0,-4));
+                        $partsof = explode('_', $data[9]);
+                        if($partsof[0] == "1") {
+                            echo "<tr>";
+                            /* LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF */
+                            /* 0      1      2   3      4    5        6        7    8   9       */
+                            $season = (int)substr($data[3],1);
+                            $week = (int)substr($data[4],1);
+                            $matchup = explode('_', strtolower($data[5]));
+                            $red = $json['seasons'][($season-1)][$matchup[0]];
+                            $blu = $json['seasons'][($season-1)][$matchup[1]];
+                            $date = substr($data[6], 0, 4) . "/" . substr($data[6], 4, 2) . "/" . substr($data[6], 6, 2);
+                            $map = strtolower($data[8]);
+
+                            echo "<td>$data[0] $data[1]</td>
+                            <td>$data[2]</td>
+                            <td>$red vs. $blu</td>
+                            <td>$map</td>
+                            <td>Season $season (Week $week)</td>
+                            <td>$date</td>
+                            <td>";
+                            for ($t = 0; $t < (int)$partsof[1]; $t++) {
+                                $temp = $files[$x+$t];
+                                $part = $t + 1;
+                                echo "<a href='$dir/$temp'>Part $part</a><br />";
+                            }
+                            echo "</td></tr>";
+                        }
                     }
                 }
-                echo "</table>";
+                echo "</tbody>
+                </table>";
             ?>
             <br />
             </div>
@@ -126,7 +161,7 @@
 <footer class="footer card-footer text-center bg-dark">
     <a href="./exaflamer/"><img src="assets/exa_colorcorrected.png" style="height:60px"></a>
     <br />
-    <small class="text-muted">Last updated February 2020</small>
+    <small class="text-muted">Last updated June 2020</small>
 </footer>
 
 </html>

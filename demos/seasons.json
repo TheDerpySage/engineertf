@@ -1,0 +1,32 @@
+{
+	"seasons": [{
+			"ire": "IRENE",
+			"ff": "Fast Forward",
+			"gknd": "Galactic Kids Next Door",
+			"cp": "Chill Penguins",
+			"tf": "The Faction",
+			"apo": "Apolodosh"
+		},
+		{},
+		{},
+		{},
+		{
+			"mcm": "Man Crush Monday",
+			"imp": "Impostors",
+			"ss": "Sweatshop Sadface :(",
+			"tkc": "Team King Chungus",
+			"tba": "Turtle Beach Audio"
+
+		},
+		{
+			"mcm": "Man Crush Monday",
+			"imp": "Impostors",
+			"ihm": "I Hate Mondays",
+			"tw": "Team Whyte",
+			"owl": "Order of the White Lotus",
+			"kks": "Krusty Krab eSports",
+			"pyp": "Pop Your Pipes!",
+			"sy": "squirtyay"
+		}
+	]
+}
