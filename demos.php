@@ -109,9 +109,9 @@
                 <tr>
                 <th scope='col'>League</th>
                 <th scope='col'>Division</th>
-                <th scope='col'>Matchup</th>
-                <th scope='col'>Map</th>
                 <th scope='col'>Season/Event</th>
+                <th scope='col'>Map</th>
+                <th scope='col'>Matchup</th>
                 <th scope='col'>Date</th>
                 <th scope='col'>Downloads</th>
                 </tr>
@@ -124,8 +124,10 @@
                         $partsof = explode('_', $data[9]);
                         if($partsof[0] == "1") {
                             echo "<tr>";
-                            /* LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF */
-                            /* 0      1      2   3      4    5        6        7    8   9       */
+                            /* LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF-MISSING */
+                            /* 0      1      2   3      4    5        6        7    8   9       10      */
+                            /* Missing only used in dummy files to indicate missing parts of otherwise  */
+                            /* complete sets.                                                           */
                             $season = (int)substr($data[3],1);
                             $week = (int)substr($data[4],1);
                             $matchup = explode('_', strtolower($data[5]));
@@ -136,15 +138,20 @@
 
                             echo "<td>$data[0] $data[1]</td>
                             <td>$data[2]</td>
-                            <td>$red vs. $blu</td>
-                            <td>$map</td>
                             <td>Season $season (Week $week)</td>
+                            <td>$map</td>
+                            <td>$red vs. $blu</td>
                             <td>$date</td>
                             <td>";
                             for ($t = 0; $t < (int)$partsof[1]; $t++) {
                                 $temp = $files[$x+$t];
                                 $part = $t + 1;
-                                echo "<a href='$dir/$temp'>Part $part</a><br />";
+                                $data = explode('-', substr($temp,0,-4));
+                                if ($data[10] != 'missing') {
+                                    echo "<a href='$dir/$temp'>Part $part</a><br />";
+                                } else {
+                                    echo "Part $part Missing<br />";
+                                }
                             }
                             echo "</td></tr>";
                         }

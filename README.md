@@ -20,9 +20,11 @@ demos.php
 Demo files placed in the demos directory will be listed on this page.
 
 They follow a strict naming scheme to be properly parsed.
-`LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF.dem`
+`LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF[-MISSING].dem`
 
 The included examples should give a better idea of what they should look like.
+The MISSING field is only included in files where we are missing a part of an otherwise complete set.
+It's for our audeince and us to understand where parts may be missing. 
 
 It also includes a JSON file `seasons.json` of Teams names and their Shorthand by season so that the `MATCH_UP` part can be shorthanded in the file name.
 
