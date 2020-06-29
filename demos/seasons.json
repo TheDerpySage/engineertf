@@ -7,8 +7,24 @@
 			"ire": "IRENE",
 			"tf": "The Faction"
 		},
-		{},
-		{},
+		{
+			"ff": "Fast Forward",
+			"knd": "Kids Next Door",
+			"rw": "Rewind",
+			"sf": "Space Force",
+			"te": "The Empire",
+			"tf": "the Flow"
+		},
+		{
+			"apo": "Apolodosh",
+			"bfff": "bffl's best friends forever",
+			"imp": "'Impostors'",
+			"inv": "Invidus",
+			"knd": "Kids Next Door",
+			"ngf": "Next Gen Flow",
+			"sg": "Shroom GANG",
+			"ts": "The Specimens"
+		},
 		{
 			"an": "Amicitia Nova",
 			"apo": "Apolodosh",
