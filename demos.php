@@ -99,6 +99,8 @@
         <div class="row bg-light-seethru">
             <div class="col-sm-12">
             <br />
+            <input class="form-control" id="input" type="text" placeholder="Filter">
+            <br />
             <?php
                 #Simple script to spit out the contents of a folder with download links
                 $dir = "demos";
@@ -116,7 +118,7 @@
                 <th scope='col'>Downloads</th>
                 </tr>
                 </thead>
-                <tbody>";
+                <tbody id='table'>";
                 for ($x = 0; $x < count($files); $x++) {
                     $file = $files[$x];
                     if(substr($file,-4) == ".dem") {
@@ -170,5 +172,14 @@
     <br />
     <small class="text-muted">Last updated June 2020</small>
 </footer>
-
+<script>
+$(document).ready(function(){
+  $("#input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 </html>
