@@ -52,7 +52,10 @@
             width: 100%;
         }
     </style>
-    <?php include "meta.html"; ?>
+    <?php 
+        include "meta.php"; 
+        metadata("Home");
+    ?>
 </head>
 <?php include "nav.html"; ?>
 <body>

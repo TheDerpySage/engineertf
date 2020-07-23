@@ -55,7 +55,10 @@
             width: 100%;
         }
     </style>
-    <?php include "meta.html"; ?>
+    <?php 
+        include "meta.php"; 
+        metadata("Demos");
+    ?>
 </head>
 <?php include "nav.html"; ?>
 <body>

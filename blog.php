@@ -47,7 +47,10 @@
             width: 100%;
         }
     </style>
-    <?php include "meta.html"; ?>
+    <?php 
+        include "meta.php"; 
+        metadata("Blog");
+    ?>
 </head>
 <?php include "nav.html"; ?>
 <body>

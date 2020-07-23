@@ -69,7 +69,10 @@
             width: 100%;
         }
     </style>
-    <?php include "meta.html"; ?>
+    <?php 
+        include "meta.php"; 
+        metadata("Videos");
+    ?>
 </head>
 <?php include "nav.html"; ?>
 <body>
