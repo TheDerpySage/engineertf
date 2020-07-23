@@ -4,13 +4,14 @@ A site made for engineer.tf paid for by Mothership808.
 
 Design made with Bootstrap CSS, dynamic content generation with PHP.
 
+
 videos.php
 ----------------------
 Videos posted to youtube may be embeded and played using this page.
 
 videos.txt is read in by the script and all the videos in the file are displayed on the site. Videos can then be selected and played on the page.
 
-Currently, the format for adding a new video to videos.txt is
+Currently, the format for adding a new video to videos.csv is
 `<youtube video ID>,<Title you want on the site>`
 
 You can also search on the page and it will display results based on the given titles in the videos.txt file.
@@ -29,6 +30,10 @@ It's for our audeince and us to understand where parts may be missing.
 It also includes a JSON file `seasons.json` of Teams names and their Shorthand by season so that the `MATCH_UP` part can be shorthanded in the file name.
 
 Easy enough.
+
+footer and nav.html
+----------------------
+These can be easily edited in one file, and those changes will reflect across all pages on the site.
 
 TO-DO
 ======================

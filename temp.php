@@ -14,6 +14,7 @@
             background-image: url('assets/engineer.jpg');
             background-repeat: no-repeat;
             background-color: #000000;
+            margin-bottom: 60px;
         }
 
         h2 {
@@ -43,6 +44,7 @@
         }
 
         .footer {
+            position: absolute;
             bottom: 0;
             width: 100%;
         }
@@ -53,9 +55,9 @@
 <body>
     <div class='container' style='margin-top:30px; margin-bottom:30px'>
         <div class='row bg-light-seethru'>
-            <div class='col-sm-12'>
+            <div class='col-sm-10'>
                 
-                <p>Sorry, nothing.</p>
+                CONTENT
 
             </div>
         </div>

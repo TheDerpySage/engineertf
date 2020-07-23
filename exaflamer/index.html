@@ -1,30 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
     <title>Exa is GOD</title>
-	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel='icon' type='image/x-icon' href='assets/favicon.ico' />
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <style>
-        img {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%)
+        }
+        .avatar {
+            width: 500px;
+            height: 500px;
+            box-sizing: border-box;
+            border: 5px white solid;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+            transform: translatey(0px);
+            animation: float 6s ease-in-out infinite;
+            
+        }
+        img { 
+            width: 500px; 
+            height: auto; 
+        }
+        @keyframes float {
+            0% {
+                box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+                transform: translatey(0px);
+            }
+            50% {
+                box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+                transform: translatey(-20px);
+            }
+            100% {
+                box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+                transform: translatey(0px);
+            }
         }
     </style>
 </head>
-<body background="assets/dance.gif">
+<body background='assets/dance.gif'>
     <!-- Anime Sucks -->
-    <img title="Exaflamer is God. On the first day he created the Dispenser. On the second day he created the sentry. On the third thru seventh day he created HLPugs and RGL HL. Exaflamer never sleeps, therefore he must be god." src="assets/exa.jpg" width="500" alt="" />
-        <audio id="music" autoplay loop>
-            <source src="assets/grassland2.m4a" type="audio/mp4">
+    <div class="container">
+        <div class="avatar">
+            <img src="assets/exa.jpg" />
+        </div>
+        <audio id='music' autoplay loop>
+            <source src='assets/grassland2.m4a' type='audio/mp4'>
         </audio>
-    </body>
+    </div>
+</body>
 <script>
     function setVolume()
     {
-        mySound=document.getElementById("music");
+        mySound=document.getElementById('music');
         mySound.volume=0.1;
     }
     window.onload=setVolume;
