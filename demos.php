@@ -80,7 +80,7 @@
                 $dir = 'demos';
                 $files = scandir($dir);
                 sort($files);
-                $json = json_decode(file_get_contents('$dir/seasons.json'), true);
+                $json = json_decode(file_get_contents("$dir/seasons.json"), true);
                 echo "<table class='table table-striped table-dark'>
                 <tr>
                 <th scope='col'>League</th>
@@ -107,8 +107,8 @@
                             $season = (int)substr($data[3],1);
                             $week = (int)substr($data[4],1);
                             $matchup = explode('_', strtolower($data[5]));
-                            $red = $json['seasons'][($season-1)][$matchup[0]];
-                            $blu = $json['seasons'][($season-1)][$matchup[1]];
+                            $red = $json["seasons"][($season-1)][$matchup[0]];
+                            $blu = $json["seasons"][($season-1)][$matchup[1]];
                             $date = substr($data[6], 0, 4) . '/' . substr($data[6], 4, 2) . '/' . substr($data[6], 6, 2);
                             $map = strtolower($data[8]);
 
