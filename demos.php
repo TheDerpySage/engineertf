@@ -80,6 +80,8 @@
                 $dir = 'demos';
                 $files = scandir($dir);
                 sort($files);
+                #To flip the order of the files so that our newest files are first
+                $files = array_reverse($files);
                 $json = json_decode(file_get_contents("$dir/seasons.json"), true);
                 echo "<table class='table table-striped table-dark'>
                 <tr>
