@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
+    # A small helper to remove . and .. from scandir
+    function scandir2($n){
+        return array_slice(scandir($n), 2);
+    }
     include "dependencies/Parsedown.php";
     $Parsedown = new Parsedown();
 ?>
@@ -77,13 +81,13 @@
                     # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED (THERE ARE 2 HEADER LINES)
                     $RENDER_LINES = 4;
                     $dir = 'blog';
-                    $folders = scandir($dir);
+                    $folders = scandir2($dir);
                     sort($folders);
                     #To flip the order of the files so that our newest files are first
                     $folders = array_reverse($folders);
                     for( $x = 0; $x < $MAX; $x++ ) {
                         $folder = $folders[$x];
-                        $files = scandir("$dir/$folder");
+                        $files = scandir2("$dir/$folder");
                         foreach($files as $file){
                             if (explode(".", $file)[1] == "md") {
                                 # Limit Render Lines

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang='en'>
-
+<?php
+    # A small helper to remove . and .. from scandir
+    function scandir2($n){
+        return array_slice(scandir($n), 2);
+    }
+?>
 <head>
     <title>Engineer.tf - Demos</title>
     <meta charset='utf-8'>
@@ -78,7 +83,7 @@
             <?php
                 #Simple script to spit out the contents of a folder with download links
                 $dir = 'demos';
-                $files = scandir($dir);
+                $files = scandir2($dir);
                 sort($files);
                 #To flip the order of the files so that our newest files are first
                 $files = array_reverse($files);

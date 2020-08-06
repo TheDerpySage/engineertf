@@ -14,7 +14,7 @@ In this github, the blog directory contains the placeholder posts we'd made at t
 
 Every post is contained within its down directory thats named with the date YYYYMMDD, and they contain a markdown file. That markdown file's name is used for metadata purposes.
 
-Uses [parsedown](https://github.com/erusev/parsedown)
+Uses [parsedown].(https://github.com/erusev/parsedown)
 
 videos.php
 ----------------------

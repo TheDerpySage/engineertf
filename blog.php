@@ -5,6 +5,11 @@
         return "<center><h3>An Error Occured: $n</h3><video width='500' autoplay loop><source src='assets/jazz.webm' type='video/webm' autoplay='true'>Your shitty browser does not support Webms. Get a real browser you fucking nerd.</video></center>";
     }
 
+    # A small helper to remove . and .. from scandir
+    function scandir2($n){
+        return array_slice(scandir($n), 2);
+    }
+
     include "dependencies/Parsedown.php";
     $Parsedown = new Parsedown();
 
@@ -28,16 +33,6 @@
 
         h2 {
             text-align: center;
-        }
-        
-        h2:link {
-            color: #000000;
-            text-decoration: underline;
-        }
-
-        h2:hover {
-            color: #999999;
-            text-decoration: underline;
         }
 
         a {
@@ -72,7 +67,7 @@
         if (empty($post)) {
             metadata("Blog");
         } else {
-            $files = scandir("blog/$post");
+            $files = scandir2("blog/$post");
             $title = "";
             foreach($files as $file){
                 $file = explode(".",$file);
@@ -103,12 +98,13 @@
                     if(empty($post)) {
                         # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED (THERE ARE 2 HEADER LINES, BUT THE FIRST ONE HAS HARD CODED HANDLING)
                         $RENDER_LINES = 5;
-                        $folders = scandir($dir);
+                        # Include array_slice 2 to exclude . and .. folder paths
+                        $folders = scandir2($dir);
                         sort($folders);
                         #To flip the order of the files so that our newest files are first
                         $folders = array_reverse($folders);
                         foreach($folders as $folder) {
-                            $files = scandir("$dir/$folder");
+                            $files = scandir2("$dir/$folder");
                             foreach($files as $file){
                                 if (explode(".", $file)[1] == "md") {
                                     # Limits the number of lines that we render
@@ -134,7 +130,7 @@
                         }
                     } else {
                         if(file_exists("$dir/$post")){
-                            $files = scandir("$dir/$post");
+                            $files = scandir2("$dir/$post");
                             foreach($files as $file){
                                 if (explode(".", $file)[1] == "md") {
                                     $handler = fopen("$dir/$post/$file", "r");
