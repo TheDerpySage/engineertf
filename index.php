@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
-
+<?php
+    include "dependencies/Parsedown.php";
+    $Parsedown = new Parsedown();
+?>
 <head>
     <title>Engineer.tf - Home</title>
     <meta charset='utf-8'>
@@ -68,23 +71,45 @@
         </div>
         <div class='row bg-light-seethru'>
             <div class='col-sm-10' style='margin-top:30px'>
-                <h2>Welcome to Engineer.tf!</h2>
-                <h5>Built by Engineers, for Engineers; Oct 2, 2019</h5>
-                <p>Engineer.tf is a competitive engineering resource for the game Team Fortress 2.</p>
-                <p>It was created in december 2016 by Mothership, waxx, and Exa_ to foster growth of engineer mains. 
-                We provide map reviews, demo reviews, mentoring, and discussion from the standpoint of high level game-play 
-                to ensure that the next generation of engineers will be ready to be the best they can be.</p>
-                <br>
-                <h2>Website Construction</h2>
-                <h5>Part 1, Oct 2, 2019</h5>
-                <p>Welcome to the new landing page for Engineer.tf! </p>
-                <p>Our website is currently under construction and will hopefully be done soon! Until then, you can check 
-                out the resources on the right side bar for our youtube, twitch, and discord information. Our discord is 
-                full of other engineer mains and other highlander players who are highly experianced in playing the format 
-                and are always willing to help out or answer questions. Feel free to drop in and say hello!</p>
+                <?php
+                    # CHANGE THIS TO CHANGE THE NUMBER OF POSTS SHOWN ON THE FRONT PAGE 
+                    $MAX = 2;
+                    # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED (THERE ARE 2 HEADER LINES)
+                    $RENDER_LINES = 4;
+                    $dir = 'blog';
+                    $folders = scandir($dir);
+                    sort($folders);
+                    #To flip the order of the files so that our newest files are first
+                    $folders = array_reverse($folders);
+                    for( $x = 0; $x < $MAX; $x++ ) {
+                        $folder = $folders[$x];
+                        $files = scandir("$dir/$folder");
+                        foreach($files as $file){
+                            if (explode(".", $file)[1] == "md") {
+                                # Limit Render Lines
+                                $handler = fopen("$dir/$folder/$file", "r");
+                                $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$folder)\n";
+                                for ( $y = 0; $y < $RENDER_LINES; $y++ ) {
+                                    $md .= fgets($handler);
+                                }
+                                if(!feof($handler))
+                                    $md .= "\n[Read more...](blog.php?post=$folder)";
+                                fclose($handler);
+                                # Just read entire file
+                                // $handler = fopen("$dir/$folder/$file", "r");
+                                // $md = "##[" . substr(fgets($handler), 2) . "](blog.php?post=$folder)";
+                                // while(!feof($handler))
+                                //     $md .= fgets($handler);
+                                // fclose($handler);
+                                echo $Parsedown->text($md);
+                                echo "<br />";
+                            }
+                        }
+                    }
+                ?>
             </div>
             <div class='col-sm-2 text-secondary' style='margin-top:5px'>
-                <ul class='nav nav-pills flex-column bg-dark'>
+                <ul class='nav nav-pills flex-column border border-dark rounded-lg bg-dark'>
                     <h3 style='width:100%; background-color:#00448a'>Social Media</h3>
                     <li class='nav-item'>
                         <a class='nav-link' href='https://www.youtube.com/channel/UCpLek2j00mwJawRD7g6SBJQ'><img src='assets/engi-youtube.png' style='width:50px;'>Youtube</a>

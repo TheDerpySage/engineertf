@@ -4,6 +4,15 @@ A site made for engineer.tf paid for by Mothership808.
 
 Design made with Bootstrap CSS, dynamic content generation with PHP.
 
+blog.php
+----------------------
+Top blog posts are shown on the home page. Main blog page shows all posts. On those pages, they only render the first few lines.
+
+Post titles link to the full render of that post. 
+
+In this github, the blog directory contains the placeholder posts we'd made at the beginning. blog_example contains some test posts i'd made.
+
+Every post is contained within its down directory thats named with the date YYYYMMDD, and they contain a markdown file. That markdown file's name is used for metadata purposes.
 
 videos.php
 ----------------------

@@ -154,7 +154,6 @@
                         echo "<br /><div class='embed-responsive embed-responsive-16by9'>";
                         echo "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/$id?autoplay=1&rel=0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
                         echo "</div><br />";
-                        echo "<a href='./videos.php' role='button' class='btn btn-primary btn-sm'><--Back--</a><br />";
                     #If it's not in our file, error out
                     } else { echo iAmError('Not a valid video'); }
                 }

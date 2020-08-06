@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang='en'>
+<?php
+    function iAmError($n) {
+        return "<center><h3>An Error Occured: $n</h3><video width='500' autoplay loop><source src='assets/jazz.webm' type='video/webm' autoplay='true'>Your shitty browser does not support Webms. Get a real browser you fucking nerd.</video></center>";
+    }
 
+    include "dependencies/Parsedown.php";
+    $Parsedown = new Parsedown();
+
+    /* GET */
+    $post = isset($_GET['post']) ? $_GET['post'] : '';
+?>
 <head>
-    <title>Engineer.tf - Temp</title>
+    <title>Engineer.tf - Blog</title>
     <meta charset='utf-8'>
     <link rel='icon' type='image/x-icon' href='assets/favicon.ico' />
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
@@ -18,6 +28,16 @@
 
         h2 {
             text-align: center;
+        }
+        
+        h2:link {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        h2:hover {
+            color: #999999;
+            text-decoration: underline;
         }
 
         a {
@@ -49,17 +69,89 @@
     </style>
     <?php 
         include "meta.php"; 
-        metadata("Blog");
+        if (empty($post)) {
+            metadata("Blog");
+        } else {
+            $files = scandir("blog/$post");
+            $title = "";
+            foreach($files as $file){
+                $file = explode(".",$file);
+                if ($file[1] == "md") {
+                    $title = $file[0];
+                    break;
+                }
+            }
+            #metadata_post("Blog post $post", $title);
+        }
     ?>
 </head>
 <?php include "nav.html"; ?>
 <body>
     <div class='container' style='margin-top:30px; margin-bottom:30px'>
+        <div class='row bg-primary text-light'>
+            <div class='col text-center'>
+                <br />
+                <h1>Blog</h1>
+                <br />
+            </div>
+        </div>
         <div class='row bg-light-seethru'>
             <div class='col-sm-12'>
-                
-                <p>Sorry, nothing.</p>
-
+            <br />
+                <?php
+                    $dir = 'blog';
+                    if(empty($post)) {
+                        # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED (THERE ARE 2 HEADER LINES, BUT THE FIRST ONE HAS HARD CODED HANDLING)
+                        $RENDER_LINES = 5;
+                        $folders = scandir($dir);
+                        sort($folders);
+                        #To flip the order of the files so that our newest files are first
+                        $folders = array_reverse($folders);
+                        foreach($folders as $folder) {
+                            $files = scandir("$dir/$folder");
+                            foreach($files as $file){
+                                if (explode(".", $file)[1] == "md") {
+                                    # Limits the number of lines that we render
+                                    $handler = fopen("$dir/$folder/$file", "r");
+                                    $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$folder)\n";
+                                    for ( $x = 0; $x < $RENDER_LINES; $x++ ) {
+                                        $md .= fgets($handler);
+                                    }
+                                    if(!feof($handler))
+                                        $md .= "\n[Read more...](blog.php?post=$folder)";
+                                    fclose($handler);
+                                    # Renders whole posts
+                                    // $handler = fopen("$dir/$folder/$file", "r");
+                                    // $md = "##[" . substr(fgets($handler), 2) . "](blog.php?post=$folder)";
+                                    // while(!feof($handler))
+                                    //     $md .= fgets($handler);
+                                    // fclose($handler);
+                                    echo $Parsedown->text($md);
+                                    echo "<br />";
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        if(file_exists("$dir/$post")){
+                            $files = scandir("$dir/$post");
+                            foreach($files as $file){
+                                if (explode(".", $file)[1] == "md") {
+                                    $handler = fopen("$dir/$post/$file", "r");
+                                    $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$folder)\n";
+                                    while(!feof($handler))
+                                        $md .= fgets($handler);
+                                    fclose($handler);
+                                    echo $Parsedown->text($md);
+                                    echo "<br />";
+                                    break;
+                                }
+                            }
+                        } else {
+                            echo iAmError('Blog post not found.');
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>
