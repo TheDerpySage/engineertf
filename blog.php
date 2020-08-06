@@ -76,7 +76,7 @@
                     break;
                 }
             }
-            #metadata_post("Blog post $post", $title);
+            metadata_post("Blog post $post", $title);
         }
     ?>
 </head>
@@ -134,7 +134,7 @@
                             foreach($files as $file){
                                 if (explode(".", $file)[1] == "md") {
                                     $handler = fopen("$dir/$post/$file", "r");
-                                    $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$folder)\n";
+                                    $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$post)\n";
                                     while(!feof($handler))
                                         $md .= fgets($handler);
                                     fclose($handler);
