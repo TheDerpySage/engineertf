@@ -7,7 +7,7 @@
     }
 ?>
 <head>
-    <title>Engineer.tf - Demos</title>
+    <title>RGL.gg - Demos</title>
     <meta charset='utf-8'>
     <link rel='icon' type='image/x-icon' href='assets/favicon.ico' />
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
@@ -67,16 +67,16 @@
     </style>
     <?php 
         include "meta.php"; 
-        metadata("Demos");
+        metadata("RGL.gg Demos");
     ?>
 </head>
 <?php include "nav.html"; ?>
 <body>
     <div class='container' style='margin-top:30px; margin-bottom:30px'>
-        <div class='row bg-primary text-light'>
+        <div class='row bg-secondary text-light'>
             <div class='col text-center'>
                 <br />
-                <h1>Demos</h1>
+                <h1><img src="assets/rglgg_logo_small.png" /> Demos</h1>
                 <br />
             </div>
         </div>
@@ -124,6 +124,7 @@
                             $date = substr($data[6], 0, 4) . '/' . substr($data[6], 4, 2) . '/' . substr($data[6], 6, 2);
                             $map = strtolower($data[8]);
 
+                            #First, determine if this season has logs
                             if(!empty($logs_json["logs"][($season-1)])) {
                                 #Determine if this demo has a log, found using identifier WEEK-MATCH_UP-MAP
                                 # TO-DO: WRITE INSTANCE FOR MULTIPLE LOGS. CURRENTLY, THIS ONLY GRABS THE FIRST

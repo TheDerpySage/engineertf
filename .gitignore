@@ -1,2 +1,4 @@
-
-engineer.tf/
+*.dem
+*.zip
+logs/
+*backup.php

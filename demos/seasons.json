@@ -1,71 +1,72 @@
-{
-	"seasons": [{
-			"apo": "Apolodosh",
-			"cp": "Chill Penguins",
-			"ff": "Fast Forward",
-			"gknd": "Galactic Kids Next Door",
-			"ire": "IRENE",
-			"tf": "The Faction"
-		},
-		{
-			"ff": "Fast Forward",
-			"knd": "Kids Next Door",
-			"rw": "Rewind",
-			"sf": "Space Force",
-			"te": "The Empire",
-			"tf": "the Flow"
-		},
-		{
-			"apo": "Apolodosh",
-			"bffl": "bffl's best friends forever",
-			"imp": "'Impostors'",
-			"inv": "Invidus",
-			"knd": "Kids Next Door",
-			"ngf": "Next Gen Flow",
-			"sg": "Shroom GANG",
-			"ts": "The Specimens"
-		},
-		{
-			"an": "Amicitia Nova",
-			"apo": "Apolodosh",
-			"bh": "Burgers & Homies",
-			"dm": "Dunk Masters",
-			"fv": "Fred V",
-			"ht": "Heart Throbs",
-			"imp": "Impostors",
-			"shit": "Super Handsome Inteligent Team",
-			"sw": "Second Wind",
-			"sy": ":squirtyay:"
-		},
-		{
-			"fv": "Fred VI",
-			"imp": "Impostors",
-			"mcm": "Man Crush Monday",
-			"ss": "Sweatshop Sadface :(",
-			"tkc": "Team King Chungus",
-			"tba": "Turtle Beach Audio"
-
-		},
-		{
-			"hds": "Home Depot eSports",
-			"ihm": "I Hate Mondays",
-			"imp": "Impostors",
-			"kks": "Krusty Krab eSports",
-			"mcm": "Man Crush Monday",
-			"owl": "Order of the White Lotus",
-			"pyp": "Pop Your Pipes!",
-			"sy": "squirtyay",
-			"tw": "Team Whyte"
-		},
-		{
-			"bs": "Burger Squad",
-			"cut": "Cuties",
-			"imp": "Impostors",
-			"knd": "Kids Next Door",
-			"mm": "Memento Mori",
-			"pp": "Pyongyang Pyonggang",
-			"ref": "refrigerator",
-			"shit": "Super Handsome Inteligent Team"
-		}
-	]
-}
+{ 
+	"seasons": [
+	  {
+		  "apo": "Apolodosh",
+		  "cp": "Chill Penguins",
+		  "ff": "Fast Forward",
+		  "gknd": "Galactic Kids Next Door",
+		  "ire": "IRENE",
+		  "tf": "The Faction"
+	  },
+	  {
+		  "ff": "Fast Forward",
+		  "knd": "Kids Next Door",
+		  "rw": "Rewind",
+		  "sf": "Space Force",
+		  "te": "The Empire",
+		  "tf": "the Flow"
+	  },
+	  {
+		  "apo": "Apolodosh",
+		  "bffl": "bffl's best friends forever",
+		  "imp": "'Impostors'",
+		  "inv": "Invidus",
+		  "knd": "Kids Next Door",
+		  "ngf": "Next Gen Flow",
+		  "sg": "Shroom GANG",
+		  "ts": "The Specimens"
+	  },
+	  {
+		  "an": "Amicitia Nova",
+		  "apo": "Apolodosh",
+		  "bh": "Burgers & Homies",
+		  "dm": "Dunk Masters",
+		  "fv": "Fred V",
+		  "ht": "Heart Throbs",
+		  "imp": "Impostors",
+		  "shit": "Super Handsome Inteligent Team",
+		  "sw": "Second Wind",
+		  "sy": ":squirtyay:"
+	  },
+	  {
+		  "fv": "Fred VI",
+		  "imp": "Impostors",
+		  "mcm": "Man Crush Monday",
+		  "ss": "Sweatshop Sadface :(",
+		  "tkc": "Team King Chungus",
+		  "tba": "Turtle Beach Audio"
+	  },
+	  {
+		  "hds": "Home Depot eSports",
+		  "ihm": "I Hate Mondays",
+		  "imp": "Impostors",
+		  "kks": "Krusty Krab eSports",
+		  "mcm": "Man Crush Monday",
+		  "owl": "Order of the White Lotus",
+		  "pyp": "Pop Your Pipes!",
+		  "sy": "squirtyay",
+		  "tw": "Team Whyte"
+	  },
+	  {
+		  "bs": "Burger Squad",
+		  "cut": "Cuties",
+		  "imp": "Impostors",
+		  "knd": "Kids Next Door",
+		  "mm": "Memento Mori",
+		  "mng": "My Net Graph Is A War Crime",
+		  "pp": "Pyongyang Pyonggang",
+		  "ref": "refrigerator",
+		  "shit": "Super Handsome Inteligent Team"		
+	  }
+   ]
+  }
