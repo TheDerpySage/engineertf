@@ -1,72 +1,130 @@
 { 
-	"seasons": [
-	  {
-		  "apo": "Apolodosh",
-		  "cp": "Chill Penguins",
-		  "ff": "Fast Forward",
-		  "gknd": "Galactic Kids Next Door",
-		  "ire": "IRENE",
-		  "tf": "The Faction"
-	  },
-	  {
-		  "ff": "Fast Forward",
-		  "knd": "Kids Next Door",
-		  "rw": "Rewind",
-		  "sf": "Space Force",
-		  "te": "The Empire",
-		  "tf": "the Flow"
-	  },
-	  {
-		  "apo": "Apolodosh",
-		  "bffl": "bffl's best friends forever",
-		  "imp": "'Impostors'",
-		  "inv": "Invidus",
-		  "knd": "Kids Next Door",
-		  "ngf": "Next Gen Flow",
-		  "sg": "Shroom GANG",
-		  "ts": "The Specimens"
-	  },
-	  {
-		  "an": "Amicitia Nova",
-		  "apo": "Apolodosh",
-		  "bh": "Burgers & Homies",
-		  "dm": "Dunk Masters",
-		  "fv": "Fred V",
-		  "ht": "Heart Throbs",
-		  "imp": "Impostors",
-		  "shit": "Super Handsome Inteligent Team",
-		  "sw": "Second Wind",
-		  "sy": ":squirtyay:"
-	  },
-	  {
-		  "fv": "Fred VI",
-		  "imp": "Impostors",
-		  "mcm": "Man Crush Monday",
-		  "ss": "Sweatshop Sadface :(",
-		  "tkc": "Team King Chungus",
-		  "tba": "Turtle Beach Audio"
-	  },
-	  {
-		  "hds": "Home Depot eSports",
-		  "ihm": "I Hate Mondays",
-		  "imp": "Impostors",
-		  "kks": "Krusty Krab eSports",
-		  "mcm": "Man Crush Monday",
-		  "owl": "Order of the White Lotus",
-		  "pyp": "Pop Your Pipes!",
-		  "sy": "squirtyay",
-		  "tw": "Team Whyte"
-	  },
-	  {
-		  "bs": "Burger Squad",
-		  "cut": "Cuties",
-		  "imp": "Impostors",
-		  "knd": "Kids Next Door",
-		  "mm": "Memento Mori",
-		  "mng": "My Net Graph Is A War Crime",
-		  "pp": "Pyongyang Pyonggang",
-		  "ref": "refrigerator",
-		  "shit": "Super Handsome Inteligent Team"		
-	  }
-   ]
+	"seasons":
+	{
+	  "hl":
+	  [
+		  {
+			  "apo": "Apolodosh",
+			  "cp": "Chill Penguins",
+			  "ff": "Fast Forward",
+			  "gknd": "Galactic Kids Next Door",
+			  "ire": "IRENE",
+			  "tf": "The Faction"
+		  },
+		  {
+			  "ff": "Fast Forward",
+			  "knd": "Kids Next Door",
+			  "rw": "Rewind",
+			  "sf": "Space Force",
+			  "te": "The Empire",
+			  "tf": "the Flow"
+		  },
+		  {
+			  "apo": "Apolodosh",
+			  "bffl": "bffl's best friends forever",
+			  "imp": "'Impostors'",
+			  "inv": "Invidus",
+			  "knd": "Kids Next Door",
+			  "ngf": "Next Gen Flow",
+			  "sg": "Shroom GANG",
+			  "ts": "The Specimens"
+		  },
+		  {
+			  "an": "Amicitia Nova",
+			  "apo": "Apolodosh",
+			  "bh": "Burgers & Homies",
+			  "dm": "Dunk Masters",
+			  "fv": "Fred V",
+			  "ht": "Heart Throbs",
+			  "imp": "Impostors",
+			  "shit": "Super Handsome Inteligent Team",
+			  "sw": "Second Wind",
+			  "sy": ":squirtyay:"
+		  },
+		  {
+			  "fv": "Fred VI",
+			  "imp": "Impostors",
+			  "mcm": "Man Crush Monday",
+			  "ss": "Sweatshop Sadface :(",
+			  "tkc": "Team King Chungus",
+			  "tba": "Turtle Beach Audio"
+		  },
+		  {
+			  "hds": "Home Depot eSports",
+			  "ihm": "I Hate Mondays",
+			  "imp": "Impostors",
+			  "kks": "Krusty Krab eSports",
+			  "mcm": "Man Crush Monday",
+			  "owl": "Order of the White Lotus",
+			  "pyp": "Pop Your Pipes!",
+			  "sy": "squirtyay",
+			  "tw": "Team Whyte"
+		  },
+		  {
+			  "bs": "Burger Squad",
+			  "cut": "Cuties",
+			  "imp": "Impostors",
+			  "knd": "Kids Next Door",
+			  "mm": "Memento Mori",
+			  "mng": "My Net Graph Is A War Crime",
+			  "pp": "Pyongyang Pyonggang",
+			  "ref": "refrigerator",
+			  "shit": "Super Handsome Inteligent Team"		
+		  },
+		  {
+			  "mcm": "Man Crush Monday",
+			  "hn": "Hood Naruto",
+			  "mts": "Menace To Society",
+			  "fp": "Fat Peter",
+			  "fre": "freezer",
+			  "sh": "somebody help",
+			  "td": "The Dojo",
+			  "dd": "division dysphoria",
+			  "gut": "Gang Unit Tactics",
+			  "mrp": "My RGL Profits Have Declined"
+		  },
+		  {
+			  "sh": "somebody help",
+			  "gl": "Goose Lagoon",
+			  "rib": "RunItBack",
+			  "fl": "Froggie Land",
+			  "dpt": "Don't Press Tab",
+			  "mcm": "Man Crush Monday",
+			  "ye": "Yeye",
+			  "yc": "Yacht Club",
+			  "ggt": "GG Team",
+			  "gb": "gotta blast"
+		  }
+	  ],
+	  "p7":
+	  [
+
+	  ],
+	  "6s":
+	  [
+		  {},
+		  {},
+		  {},
+		  {},
+		  {},
+		  {
+			  "503": "Portland Burnsiders",
+			  "gci": "GlobalClan Ice",
+			  "gcf": "GlobalClan Fire",
+			  "4g": "froyotech",
+			  "f150": "Ford Gaming",
+			  "plat": "platypugsesports",
+			  "soj": "Sojourner",
+			  "yao": "Portland Yaomen",
+			  "jug": "The Jug Dealers",
+			  "wg": "Witness Gaming",
+			  "cb": "Clean Buddies",
+			  "cp": "Cat Posse"
+		  }
+	  ],
+	  "4s":
+	  [
+
+	  ]
+	}
   }

@@ -90,7 +90,7 @@
                 #To flip the order of the files so that our newest files are first
                 $files = array_reverse($files);
                 $json = json_decode(file_get_contents("demos/seasons.json"), true);
-                $logs_json = json_decode(file_get_contents("logs/logs.json"), true);
+                $logs_json = json_decode(file_get_contents("demos/logs.json"), true);
                 echo "<table id='table1' class='table table-striped table-dark'>
                 <thead>
                 <tr>
@@ -111,29 +111,27 @@
                         $data = explode('-', substr(strtoupper($file),0,-4));
                         $partsof = explode('_', $data[9]);
                         if($partsof[0] == '1') {
-                            echo '<tr>';
                             /* LEAGUE-FORMAT-DIV-SEASON-WEEK-MATCH_UP-YYYYMMDD-TIME-MAP-PART_OF-MISSING */
                             /* 0      1      2   3      4    5        6        7    8   9       10      */
                             /* Missing only used in dummy files to indicate missing parts of otherwise  */
                             /* complete sets.                                                           */
+                            $format = strtolower($data[1]);
                             $season = (int)substr($data[3],1);
                             $week = (int)substr($data[4],1);
                             $matchup = explode('_', strtolower($data[5]));
-                            $red = $json["seasons"][($season-1)][$matchup[0]];
-                            $blu = $json["seasons"][($season-1)][$matchup[1]];
+                            $red = $json["seasons"][$format][($season-1)][$matchup[0]];
+                            $blu = $json["seasons"][$format][($season-1)][$matchup[1]];
                             $date = substr($data[6], 0, 4) . '/' . substr($data[6], 4, 2) . '/' . substr($data[6], 6, 2);
                             $map = strtolower($data[8]);
-
-                            #First, determine if this season has logs
-                            if(!empty($logs_json["logs"][($season-1)])) {
+                            if(!empty($logs_json["logs"][$format][($season-1)])) {
                                 #Determine if this demo has a log, found using identifier WEEK-MATCH_UP-MAP
                                 # TO-DO: WRITE INSTANCE FOR MULTIPLE LOGS. CURRENTLY, THIS ONLY GRABS THE FIRST
-                                $log_id = $logs_json["logs"][($season-1)][strtolower($data[4] . "-" .  $data[5] . "-" . $data[8])][0];
+                                $log_id = $logs_json["logs"][$format][($season-1)][strtolower($data[4] . "-" .  $data[5] . "-" . $data[8])][0];
                                 if(isset($log_id)) {
-                                    $stats="<a href='https://logs.tf/$log_id'>Yes</a>";
+                                    $stats="<a target='_blank' href='https://logs.tf/$log_id'>Yes</a>";
                                 } else { $stats="No"; }
                             } else { $stats="No"; }
-
+                            echo '<tr>';
                             echo "<td>$data[0] $data[1]</td>
                             <td>$data[2]</td>
                             <td>Season $season (Week $week)</td>
@@ -169,8 +167,8 @@
 <script>
 $(document).ready(function(){
   $("#table1").dataTable({
-        "iDisplayLength": 10,
-        "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]],
+        "iDisplayLength": 25,
+        "aLengthMenu": [[25, 50, 100,  -1], [25, 50, 100, "All"]],
         "order": [[ 5, "desc" ]]
     });
 });

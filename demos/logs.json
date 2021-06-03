@@ -1,0 +1,76 @@
+{ 
+	"logs": 
+    {
+        "hl":
+	    [
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+                "w01-bs_pp-pl_vigil_rc7": [2701293],
+                "w01-cut_mm-pl_vigil_rc7": [2701176],
+                "w01-ref_imp-pl_vigil_rc7": [2701199],
+                "w01-knd_shit-pl_vigil_rc7": [2701227],
+                "w02-imp_knd-koth_ashville_rc2b": [2707694],
+                "w02-shit_bs-koth_ashville_rc2b": [2707647],
+                "w02-mm_ref-koth_ashville_rc2b": [2707648],
+                "w02-pp_cut-koth_ashville_rc2b": [2707660],
+                "w03-knd_mm-pl_swiftwater_final1": [2714592],
+                "w03-ref_mng-pl_swiftwater_final1": [2714640],
+                "w03-bs_cut-pl_swiftwater_final1": [2714525],
+                "w03-shit_imp-pl_swiftwater_final1": [null],
+                "w04-cut_ref-koth_product_rcx": [2721809],
+                "w04-mm_shit-koth_product_rcx": [null],
+                "w04-mng_knd-koth_product_rcx": [2721845],
+                "w04-imp_bs-koth_product_rcx": [2721859],
+                "w05-imp_mm-pl_upward": [2729315],
+                "w05-knd_cut-pl_upward": [2729393],
+                "w05-shit_mng-pl_upward": [null],
+                "w05-bs_ref-pl_upward": [2729281],
+                "w06-cut_shit-koth_cascade_rc1a": [null],
+                "w06-mng_imp-koth_cascade_rc1a": [2736447],
+                "w06-mm_bs-koth_cascade_rc1a": [2736432],
+                "w06-ref_knd-koth_cascade_rc1a": [2736409],
+                "w07-shit_ref-cp_steel": [null],
+                "w07-bs_knd-cp_steel": [2745847,2745906],
+                "w07-imp_cut-cp_steel": [2745918],
+                "w07-mm_mng-cp_steel": [2745960],
+                "w08-cut_ref-koth_product_rcx": [2752896],
+                "w08-cut_ref-pl_upward": [2753082],
+                "w08-knd_mm-koth_product_rcx": [2752886],
+                "w08-knd_mm-pl_upward": [2753038],
+                "w09-cut_knd-koth_ashville_rc2b": [2759691],
+                "w09-cut_knd-pl_swiftwater_final1": [2759835],
+                "w09-cut_knd-pl_vigil_rc7": [2759909],
+                "w09-mm_ref-pl_upward": [2759763],
+                "w09-mm_ref-cp_steel": [2759779,2759791],
+                "w10-ref_knd-pl_upward": [2766220],
+                "w10-ref_knd-koth_cascade_rc1a": [2766233],
+                "w11-mm_knd-cp_steel": [2772525],
+                "w11-mm_knd-pl_vigil_rc7": [2772607],
+                "w11-mm_knd-koth_product_rcx": [2772615]
+            }
+        ],
+        "p7":
+        [
+  
+        ],
+        "6s":
+        [
+  
+        ],
+        "4s":
+        [
+  
+        ]
+    }   
+}
