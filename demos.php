@@ -131,8 +131,8 @@
                                     $log_id = $logs_json["logs"][$format][($season-1)][strtolower($data[4] . "-" .  $data[5] . "-" . $data[8])][0];
                                     if(isset($log_id)) {
                                         $stats="<a target='_blank' href='https://logs.tf/$log_id'>Yes</a>";
-                                    } else { $stats="No"; }
-                                } else { $stats="No"; }
+                                    } else { $stats="N/A"; }
+                                } else { $stats="N/A"; }
                                 echo '<tr>';
                                 echo "<td>$data[0] $data[1]</td>
                                 <td>$data[2]</td>
