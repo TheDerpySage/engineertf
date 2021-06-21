@@ -1,0 +1,28 @@
+.table-custom {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.br {
+    display: block;
+} 
+
+.container-custom {
+    max-width: none;
+    overflow: hidden;
+}
+
+@media (min-width: 1200px){
+    .br {
+        display: none;
+    }
+
+    .container-custom {
+        max-width: 1140px;
+    }
+
+    .table-custom {
+        table-layout: auto;
+        width: 100%;
+    }
+}
