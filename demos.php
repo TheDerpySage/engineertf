@@ -94,7 +94,7 @@
                 $logs_json = json_decode(file_get_contents("demos/logs.json"), true);
                 echo "<table id='table1' class='table table-striped table-dark table-custom'>
                 <thead>
-                <tr>
+                <tr> 
                 <th scope='col'>League</th>
                 <th scope='col'>Division</th>
                 <th scope='col'>Season/<br class='br'/>Event</th>

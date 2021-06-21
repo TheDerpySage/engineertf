@@ -20,7 +20,7 @@
     <style>
         table {
             width: 100%;
-        }
+        } 
 
         td, th {
             text-align:center;
