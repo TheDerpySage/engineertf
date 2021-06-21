@@ -12,6 +12,7 @@
     <link rel='icon' type='image/x-icon' href='assets/favicon.ico' />
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css" integrity='sha384-Vwj80kTHnbvFQKFx/DXnuzcgBarxFKFKVn0/CvmrVdyYhYHbg2e05M8TF4dskCwA' crossorigin='anonymous'>
+    <link rel="stylesheet" href="./css/style.css">
     <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
     <script src='https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js' integrity='sha384-N+hjelBRegvuPAsq7MTLjYC2XIhcdnMqJtJqW2i8lSU0LYCr7SJP33GsoNGWk9Aj' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
@@ -72,7 +73,7 @@
 </head>
 <?php include "nav.html"; ?>
 <body>
-    <div class='container' style='margin-top:30px; margin-bottom:30px'>
+    <div class='container container-custom' style='margin-top:30px; margin-bottom:30px'>
         <div class='row bg-secondary text-light'>
             <div class='col text-center'>
                 <br />
@@ -91,12 +92,12 @@
                 $files = array_reverse($files);
                 $json = json_decode(file_get_contents("demos/seasons.json"), true);
                 $logs_json = json_decode(file_get_contents("demos/logs.json"), true);
-                echo "<table id='table1' class='table table-striped table-dark'>
+                echo "<table id='table1' class='table table-striped table-dark table-custom'>
                 <thead>
                 <tr>
                 <th scope='col'>League</th>
                 <th scope='col'>Division</th>
-                <th scope='col'>Season/Event</th>
+                <th scope='col'>Season/<br class='br'/>Event</th>
                 <th scope='col'>Map</th>
                 <th scope='col'>Matchup</th>
                 <th scope='col'>Date</th>
@@ -104,7 +105,7 @@
                 <th scope='col'>Downloads</th>
                 </tr>
                 </thead>
-                <tbody>";
+                <tbody class='tbody'>";
                 for ($x = 0; $x < count($files); $x++) {
                     $file = $files[$x];
                     if(substr($file,-4) == '.dem') {
@@ -134,9 +135,9 @@
                             echo '<tr>';
                             echo "<td>$data[0] $data[1]</td>
                             <td>$data[2]</td>
-                            <td>Season $season (Week $week)</td>
+                            <td>Season $season <br class='br'/>(Week $week)</td>
                             <td>$map</td>
-                            <td>$red vs. $blu</td>
+                            <td>$red <br class='br'/>vs. <br class='br'/>$blu</td>
                             <td>$date</td>
                             <td>$stats</td>
                             <td>";
