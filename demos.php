@@ -125,15 +125,17 @@
                                 $blu = $json["seasons"][$format][($season-1)][$matchup[1]];
                                 $date = substr($data[6], 0, 4) . '/' . substr($data[6], 4, 2) . '/' . substr($data[6], 6, 2);
                                 $map = strtolower($data[8]);
-
                                 if(!empty($logs_json["logs"][$format][($season-1)])) {
                                     #Determine if this demo has a log, found using identifier WEEK-MATCH_UP-MAP
-                                    # TO-DO: WRITE INSTANCE FOR MULTIPLE LOGS. CURRENTLY, THIS ONLY GRABS THE FIRST
-                                    $log_id = $logs_json["logs"][$format][($season-1)][strtolower($data[4] . "-" .  $data[5] . "-" . $data[8])][0];
-                                    if(isset($log_id)) {
-                                        $stats="<a target='_blank' href='https://logs.tf/$log_id'>Link</a>";
-                                    } else { $stats="N/A"; }
-                                } else { $stats="N/A"; }
+                                    $stats = "";
+                                    $log_ids = $logs_json["logs"][$format][($season-1)][strtolower($data[4] . "-" .  $data[5] . "-" . $data[8])];
+                                    if(isset($log_ids[0])) {
+                                        for ($i = 0; $i < count($log_ids); $i++){
+                                            $n = $i + 1;
+                                            $stats.="<a target='_blank' href='https://logs.tf/$log_ids[$i]'>Part $n</a><br />";
+                                        }
+                                    } else { $stats="None"; }
+                                } else { $stats="None"; }
                                 echo '<tr>';
                                 echo "<td>$data[0] $data[1]</td>
                                 <td>$data[2]</td>
