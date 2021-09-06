@@ -14,7 +14,7 @@ In this github, the blog directory contains the placeholder posts we'd made at t
 
 Every post is contained within its down directory thats named with the date YYYYMMDD, and they contain a markdown file. That markdown file's name is used for metadata purposes.
 
-Uses [parsedown].(https://github.com/erusev/parsedown)
+Uses [parsedown](https://github.com/erusev/parsedown).
 
 videos.php
 ----------------------
@@ -38,15 +38,8 @@ The included examples should give a better idea of what they should look like.
 The MISSING field is only included in files where we are missing a part of an otherwise complete set.
 It's for our audeince and us to understand where parts may be missing. 
 
-It also includes a JSON file `seasons.json` of Teams names and their Shorthand by season so that the `MATCH_UP` part can be shorthanded in the file name.
-
-Easy enough.
+It also includes two JSON files `seasons.json` of Teams names and their Shorthand by season so that the `MATCH_UP` part can be shorthanded in the file name and `logs.json` to assign logs to each demo using a similar json setup to the `seasons.json` using the identifier of `WEEK-MATCH_UP-MAP` keying to the Log ID found on [logs.tf](https://logs.tf/). There are stored in an array object, and more than one Log ID can be provided.
 
 footer and nav.html
 ----------------------
 These can be easily edited in one file, and those changes will reflect across all pages on the site.
-
-TO-DO
-======================
-
-Create the blog.php system
