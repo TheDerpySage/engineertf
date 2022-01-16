@@ -98,7 +98,7 @@
                     if(empty($post)) {
                         # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED (THERE ARE 2 HEADER LINES, BUT THE FIRST ONE HAS HARD CODED HANDLING)
                         $RENDER_LINES = 5;
-                        # Include array_slice 2 to exclude . and .. folder paths
+                        # Include scandir2 to exclude . and .. folder paths
                         $folders = scandir2($dir);
                         sort($folders);
                         #To flip the order of the files so that our newest files are first
@@ -129,7 +129,8 @@
                             }
                         }
                     } else {
-                        if(file_exists("$dir/$post")){
+                        $posts = scandir2("$dir");
+                        if (in_array($post, $posts)){
                             $files = scandir2("$dir/$post");
                             foreach($files as $file){
                                 if (explode(".", $file)[1] == "md") {
